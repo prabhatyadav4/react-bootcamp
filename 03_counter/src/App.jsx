@@ -6,7 +6,16 @@ function App() {
 
   const addValue = () => {
     if (count < 20) {
-      setCount(count + 1);
+      
+      // setCount(count + 1);
+      // setCount(count + 1);
+      // setCount(count + 1);
+      // setCount(count + 1);         // ---> This increments only 1 times doesn't matter how many times it passes.
+      
+      setCount(count => count + 1);
+      setCount(count => count + 1);
+      setCount(count => count + 1);
+      setCount(count => count + 1);  // ---> This increments n (no. of setCount) times.
     }
   };
 
