@@ -15,7 +15,15 @@ function App() {
       .getCurrentUser()
       .then((userData) => {
         if (userData) {
-          dispatch(login({ userData }));
+          dispatch(
+            login({
+              userData: {
+                $id: userData.$id,
+                name: userData.name,
+                email: userData.email,
+              },
+            }),
+          );
         } else {
           dispatch(logout());
         }
@@ -28,7 +36,7 @@ function App() {
       <div className="w-full block">
         <Header />
         <main>
-          TODO: <Outlet />
+          <Outlet />
         </main>
         <Footer />
       </div>
